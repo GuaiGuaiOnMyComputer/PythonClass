@@ -84,11 +84,12 @@ __學號換算__
 
 ## Q2 手動輸入三值
 
+[sorce code](CODE/Q2.py) and [replit](https://replit.com/join/qunzjqxzyg-b10831020)
+
 __終端機輸出__
 
 ![](IMG/Q2%20terminal%20output.png)
 
-[sorce code](CODE/Q2.py) and [replit](https://replit.com/join/qunzjqxzyg-b10831020)
 
 __處理使用者輸入__
 
@@ -107,7 +108,7 @@ def get_input(his_exercises:dict) -> None:
 
 ```
 
-這份Python script使用try-except語法，可以處理使用者輸入為非數值的情況。try_parse_input函式第一個參數傳入一種python object的constructor，呼叫此函式時依需求輸入float、int或是double的constructor可以把使用者輸入內容轉換為不同資料型別。
+try_parse_input函式第一個參數傳入一種python object的constructor，呼叫此函式時依需求輸入float、int或是double的constructor可以把使用者輸入內容轉換為不同資料型別。
 
 若使用者輸入內容無法轉換為數值，則會產生ValueError並重新要求使用者再輸入一次。
 
