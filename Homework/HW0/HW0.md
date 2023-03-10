@@ -90,6 +90,37 @@ __終端機輸出__
 
 [sorce code](CODE/Q2.py) and [replit](https://replit.com/join/qunzjqxzyg-b10831020)
 
-這份Python script使用try-except語法，可以處理使用者輸入為非數值的情況。
+__處理使用者輸入__
+
+```python
+def try_parse_input(obj_constructor, prompt:str) -> int:
+    try:
+        return obj_constructor(input(prompt))
+    except ValueError:
+        print("Excuse me, What? A float or integer is required.")
+        return try_parse_input(obj_constructor, prompt)
+
+def get_input(his_exercises:dict) -> None:
+    for workout in his_exercises:
+        prompt = f"How many minutes have he done {workout:>8}?"
+        his_exercises[workout] = try_parse_input(float, prompt)
+
+```
+
+這份Python script使用try-except語法，可以處理使用者輸入為非數值的情況。try_parse_input函式第一個參數傳入一種python object的constructor，呼叫此函式時依需求輸入float、int或是double的constructor可以把使用者輸入內容轉換為不同資料型別。
+
+若使用者輸入內容無法轉換為數值，則會產生ValueError並重新要求使用者再輸入一次。
 
 既然題目未限定輸入各項運動時長的順序，可以使用dictionary儲存各項運動的時間長度。以運動名稱為key，其時間長度作為value形成的dictionay在取值時特別方便，且語法簡潔。
+
+## Q3 計算BMI
+[sorce code](CODE/Q3.py) and [replit](https://replit.com/join/euxkzmtjut-b10831020)
+
+__終端機輸出__
+
+![terminal output](IMG/Q3%20termainal%20output.png)
+
+```python
+from Q2 import try_parse_input
+```
+重複使用Q2的try_parse_input函式，傳入float constructor把使用者輸入內容轉換為float。
